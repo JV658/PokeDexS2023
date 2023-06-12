@@ -7,23 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB1650DD2A2E305100DD1207 /* PokemonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1650DC2A2E305100DD1207 /* PokemonTableViewCell.swift */; };
 		DB8EEADD2A24F5CD006E91AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8EEADC2A24F5CD006E91AD /* AppDelegate.swift */; };
 		DB8EEADF2A24F5CD006E91AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8EEADE2A24F5CD006E91AD /* SceneDelegate.swift */; };
-		DB8EEAE12A24F5CD006E91AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8EEAE02A24F5CD006E91AD /* ViewController.swift */; };
 		DB8EEAE42A24F5CD006E91AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB8EEAE22A24F5CD006E91AD /* Main.storyboard */; };
 		DB8EEAE62A24F5CD006E91AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB8EEAE52A24F5CD006E91AD /* Assets.xcassets */; };
 		DB8EEAE92A24F5CD006E91AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB8EEAE72A24F5CD006E91AD /* LaunchScreen.storyboard */; };
+		DB8EEAF12A24F62A006E91AD /* PokedexTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8EEAF02A24F62A006E91AD /* PokedexTableViewController.swift */; };
+		DB8EEAF32A24F672006E91AD /* PokeAPI_Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8EEAF22A24F672006E91AD /* PokeAPI_Helper.swift */; };
+		DB8EEAF52A24F8EE006E91AD /* Pokedex.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8EEAF42A24F8EE006E91AD /* Pokedex.swift */; };
+		DB8EEAF72A250005006E91AD /* PokemonDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8EEAF62A250005006E91AD /* PokemonDataViewController.swift */; };
+		DB8EEAF92A250104006E91AD /* PokeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8EEAF82A250104006E91AD /* PokeData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DB1650DC2A2E305100DD1207 /* PokemonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTableViewCell.swift; sourceTree = "<group>"; };
 		DB8EEAD92A24F5CD006E91AD /* PokeDex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeDex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB8EEADC2A24F5CD006E91AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB8EEADE2A24F5CD006E91AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DB8EEAE02A24F5CD006E91AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		DB8EEAE32A24F5CD006E91AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DB8EEAE52A24F5CD006E91AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DB8EEAE82A24F5CD006E91AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DB8EEAEA2A24F5CD006E91AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB8EEAF02A24F62A006E91AD /* PokedexTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexTableViewController.swift; sourceTree = "<group>"; };
+		DB8EEAF22A24F672006E91AD /* PokeAPI_Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeAPI_Helper.swift; sourceTree = "<group>"; };
+		DB8EEAF42A24F8EE006E91AD /* Pokedex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokedex.swift; sourceTree = "<group>"; };
+		DB8EEAF62A250005006E91AD /* PokemonDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonDataViewController.swift; sourceTree = "<group>"; };
+		DB8EEAF82A250104006E91AD /* PokeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokeData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +68,13 @@
 			children = (
 				DB8EEADC2A24F5CD006E91AD /* AppDelegate.swift */,
 				DB8EEADE2A24F5CD006E91AD /* SceneDelegate.swift */,
-				DB8EEAE02A24F5CD006E91AD /* ViewController.swift */,
+				DB8EEAF02A24F62A006E91AD /* PokedexTableViewController.swift */,
 				DB8EEAE22A24F5CD006E91AD /* Main.storyboard */,
+				DB8EEAF62A250005006E91AD /* PokemonDataViewController.swift */,
+				DB1650DC2A2E305100DD1207 /* PokemonTableViewCell.swift */,
+				DB8EEAF22A24F672006E91AD /* PokeAPI_Helper.swift */,
+				DB8EEAF82A250104006E91AD /* PokeData.swift */,
+				DB8EEAF42A24F8EE006E91AD /* Pokedex.swift */,
 				DB8EEAE52A24F5CD006E91AD /* Assets.xcassets */,
 				DB8EEAE72A24F5CD006E91AD /* LaunchScreen.storyboard */,
 				DB8EEAEA2A24F5CD006E91AD /* Info.plist */,
@@ -138,9 +153,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB8EEAE12A24F5CD006E91AD /* ViewController.swift in Sources */,
+				DB8EEAF12A24F62A006E91AD /* PokedexTableViewController.swift in Sources */,
+				DB1650DD2A2E305100DD1207 /* PokemonTableViewCell.swift in Sources */,
 				DB8EEADD2A24F5CD006E91AD /* AppDelegate.swift in Sources */,
+				DB8EEAF92A250104006E91AD /* PokeData.swift in Sources */,
+				DB8EEAF72A250005006E91AD /* PokemonDataViewController.swift in Sources */,
+				DB8EEAF52A24F8EE006E91AD /* Pokedex.swift in Sources */,
 				DB8EEADF2A24F5CD006E91AD /* SceneDelegate.swift in Sources */,
+				DB8EEAF32A24F672006E91AD /* PokeAPI_Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
