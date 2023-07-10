@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PokeData: Codable {
+class PokeData: Codable {
     var name: String
     var id: Int
     var weight: Int

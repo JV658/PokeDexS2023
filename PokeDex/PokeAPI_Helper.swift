@@ -12,6 +12,9 @@ enum PokeAPI_Errors: Error {
     case cannotConvertURL
 }
 
+let cache = NSCache<NSString, PokeData>()
+let imageCache = NSCache<NSString, UIImage>()
+
 class PokeAPI_Helper {
     private static var baseURLString = "https://pokeapi.co/api/v2/pokemon?limit=351"
     
@@ -37,16 +40,32 @@ class PokeAPI_Helper {
     }
     
     public static func fetchPokeData(urlString: String) async throws -> PokeData {
+        
+        if let cachedObject = cache.object(forKey: urlString as NSString)
+        {
+            return cachedObject
+        }
+        
         let data = try await fetch(urlString: urlString)
         
         let decoder = JSONDecoder()
         
         let pokeData = try decoder.decode(PokeData.self, from: data)
         
+        cache.setObject(pokeData, forKey: urlString as NSString)
+        
         return pokeData
     }
     
     public static func fetchPokeImage(urlString: String) async throws -> UIImage? {
+        if let cachedImage = imageCache.object(forKey: urlString as NSString)
+        {
+            print("cached image was used")
+            return cachedImage
+        }
+        
+        print("fetching image for \(urlString)")
+        
         let data = try await fetch(urlString: urlString)
                 
         let uiImage = UIImage(data: data)
