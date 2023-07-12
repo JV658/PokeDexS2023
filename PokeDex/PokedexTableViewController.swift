@@ -7,6 +7,7 @@
 
 import UIKit
 
+
 class PokedexTableViewController: UITableViewController {
     
     var pokedex: [Pokemon] = []
