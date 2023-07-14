@@ -21,6 +21,7 @@ class PokemonDataViewController: UIViewController {
     var pokeData: PokeData!
     var urlString: String!
     var container = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
+    var pokemon: FavPokemon!
     
     @IBAction func toggleFav(_ sender: UIButton) {
         if sender.currentImage == UIImage(systemName: "star"){
@@ -42,9 +43,15 @@ class PokemonDataViewController: UIViewController {
         } else {
             // set star back to empty outline
             // remove favPokemon
+            
+            sender.setImage(UIImage(systemName: "star"), for: .normal)
+            // change button image to black
+            sender.tintColor = .black
+            
+            if let pokemon = pokemon {
+                container.viewContext.delete(pokemon)
+            }
         }
-
-        
     }
     
     override func viewDidLoad() {
@@ -61,7 +68,7 @@ class PokemonDataViewController: UIViewController {
         let pokemons = try! container.viewContext.fetch(fetchRequest)
         
         if pokemons.count > 0 {
-            let pokemon = pokemons.first!
+            pokemon = pokemons.first!
             
             idLabel.text = String(pokemon.id)
             nameLabel.text = pokemon.name
@@ -70,6 +77,14 @@ class PokemonDataViewController: UIViewController {
             
             isFav.setImage(UIImage(systemName: "star.fill"), for: .normal)
             isFav.tintColor = .yellow
+            
+            if let imgURL = pokemon.imgURL {
+                Task{
+                    pokeImage.image = try await PokeAPI_Helper.fetchPokeImage(urlString: imgURL)
+                }
+            } else {
+                pokeImage.image = UIImage(systemName: "person")
+            }
             
         } else {
             Task{

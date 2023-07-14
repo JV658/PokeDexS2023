@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DB1650DD2A2E305100DD1207 /* PokemonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1650DC2A2E305100DD1207 /* PokemonTableViewCell.swift */; };
+		DB4B7BE12A5F603C0057B679 /* FavTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB4B7BE02A5F603C0057B679 /* FavTableViewController.swift */; };
 		DB8EEADD2A24F5CD006E91AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8EEADC2A24F5CD006E91AD /* AppDelegate.swift */; };
 		DB8EEADF2A24F5CD006E91AD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB8EEADE2A24F5CD006E91AD /* SceneDelegate.swift */; };
 		DB8EEAE42A24F5CD006E91AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB8EEAE22A24F5CD006E91AD /* Main.storyboard */; };
@@ -23,6 +24,7 @@
 
 /* Begin PBXFileReference section */
 		DB1650DC2A2E305100DD1207 /* PokemonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonTableViewCell.swift; sourceTree = "<group>"; };
+		DB4B7BE02A5F603C0057B679 /* FavTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavTableViewController.swift; sourceTree = "<group>"; };
 		DB8EEAD92A24F5CD006E91AD /* PokeDex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeDex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB8EEADC2A24F5CD006E91AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DB8EEADE2A24F5CD006E91AD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 				DB8EEADE2A24F5CD006E91AD /* SceneDelegate.swift */,
 				DB8EEAF02A24F62A006E91AD /* PokedexTableViewController.swift */,
 				DB8EEAE22A24F5CD006E91AD /* Main.storyboard */,
+				DB4B7BE02A5F603C0057B679 /* FavTableViewController.swift */,
 				DB8EEAF62A250005006E91AD /* PokemonDataViewController.swift */,
 				DB1650DC2A2E305100DD1207 /* PokemonTableViewCell.swift */,
 				DB8EEAF22A24F672006E91AD /* PokeAPI_Helper.swift */,
@@ -163,6 +166,7 @@
 				DB8EEAF92A250104006E91AD /* PokeData.swift in Sources */,
 				DB8EEAF72A250005006E91AD /* PokemonDataViewController.swift in Sources */,
 				DB8EEAF52A24F8EE006E91AD /* Pokedex.swift in Sources */,
+				DB4B7BE12A5F603C0057B679 /* FavTableViewController.swift in Sources */,
 				DB8EEADF2A24F5CD006E91AD /* SceneDelegate.swift in Sources */,
 				DB8EEAF32A24F672006E91AD /* PokeAPI_Helper.swift in Sources */,
 			);
