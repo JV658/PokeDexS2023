@@ -6,12 +6,14 @@
 //
 
 import UIKit
+import CoreData
 
 
 class PokedexTableViewController: UITableViewController {
     
     var pokedex: [Pokemon] = []
-
+    var container = (UIApplication.shared.delegate as! AppDelegate).persistentContainer
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -47,6 +49,27 @@ class PokedexTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "pokemonCell", for: indexPath) as! PokemonTableViewCell
+        
+        cell.container = container
+        cell.urlString = pokedex[indexPath.row].url
+        
+        /**
+         checking if the pokemon is a favorite
+         */
+        let fetchRequest = NSFetchRequest<FavPokemon>(entityName: "FavPokemon")
+        let predicate = NSPredicate(format: "url = %@", pokedex[indexPath.row].url)
+        fetchRequest.predicate = predicate
+        let pokemons = try! container.viewContext.fetch(fetchRequest)
+        /**
+         end CoreData fetch
+         */
+        
+        if pokemons.count > 0 {
+            cell.isfavImage.alpha = 1
+            cell.favPokemon = pokemons.first!
+        } else {
+            cell.isfavImage.alpha = 0
+        }
         
         cell.pokeNameLabel.text = pokedex[indexPath.row].name
         
