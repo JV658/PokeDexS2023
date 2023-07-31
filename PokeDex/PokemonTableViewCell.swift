@@ -28,6 +28,11 @@ class PokemonTableViewCell: UITableViewCell {
     
     @objc func toggleFav(_ gestureRecognizer: UIGestureRecognizer){
         
+        /** FIX
+            long press is a continues recognizer so it will fire this mehtod many time. to account for this we need to check if the gesture began, if it did not we need to quit this method so it doesn't get called twice
+         */
+        if gestureRecognizer.state != .began { return }
+        
         if let pokemon = favPokemon {
             container.viewContext.delete(pokemon)
             (UIApplication.shared.delegate as! AppDelegate).saveContext()

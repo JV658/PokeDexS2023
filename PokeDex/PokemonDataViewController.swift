@@ -67,9 +67,13 @@ class PokemonDataViewController: UIViewController {
         
         let pokemons = try! container.viewContext.fetch(fetchRequest)
         
-        if pokemons.count > 0 {
+        if pokemons.count > 0
+           && pokemons.first!.id != 0{
             pokemon = pokemons.first!
             
+            // TODO: add a nil check for pokemon.id
+            // TODO: if pokemon.id is nil, we need to use webservices to fetch the rest of the data
+            // TODO: otherwise load as normal
             idLabel.text = String(pokemon.id)
             nameLabel.text = pokemon.name
             weightLabel.text = pokemon.weight
@@ -96,6 +100,25 @@ class PokemonDataViewController: UIViewController {
                     weightLabel.text = String(pokeData.weight)
                     heightLabel.text = String(pokeData.height)
                     isDefaultLabel.text = String(pokeData.is_default)
+                    
+                    // TODO: save the information to core data if this is a favorited pokemon
+                    if pokemons.count > 0 {
+                        // change button image to filled start
+                        isFav.setImage(UIImage(systemName: "star.fill"), for: .normal)
+                        // change button image to yellow
+                        isFav.tintColor = .yellow
+                        
+                        pokemon = pokemons.first!
+                        
+                        pokemon.id = Int64(pokeData.id)
+                        pokemon.name = pokeData.name
+                        pokemon.weight = String(pokeData.weight)
+                        pokemon.height = String(pokeData.height)
+                        pokemon.imgURL = pokeData.sprites.front_default
+                        pokemon.url = urlString
+                        
+                        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+                    }
                     
                     pokeImage.image = try await PokeAPI_Helper.fetchPokeImage(urlString: pokeData.sprites.front_default)
                     
